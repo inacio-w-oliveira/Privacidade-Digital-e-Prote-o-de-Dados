@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 500" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#1a1147" flood-opacity="0.18"/>
+    </filter>
+    <linearGradient id="coralGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff5975"/>
+      <stop offset="100%" stop-color="#ff3d5a"/>
+    </linearGradient>
+    <linearGradient id="phoneBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d226b"/>
+      <stop offset="100%" stop-color="#17103d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Corpo do Celular -->
+  <rect x="25" y="15" width="290" height="470" rx="38" fill="#ffffff" stroke="url(#phoneBorder)" stroke-width="8" filter="url(#shadow)"/>
+  
+  <!-- Notch e Alto-falante -->
+  <rect x="120" y="27" width="100" height="18" rx="9" fill="#17103d"/>
+  <circle cx="140" cy="36" r="3.5" fill="#36297a"/>
+  <rect x="156" y="34" width="45" height="4" rx="2" fill="#36297a"/>
+  
+  <!-- Barra de Status -->
+  <text x="50" y="58" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#17133a">09:41</text>
+  <path d="M265 50 h14 a2 2 0 0 1 2 2 v6 a2 2 0 0 1 -2 2 h-14 a2 2 0 0 1 -2 -2 v-6 a2 2 0 0 1 2 -2 z" fill="#17133a"/>
+  <rect x="283" y="53" width="2" height="4" fill="#17133a"/>
+  <circle cx="248" cy="55" r="3" fill="#17133a"/>
+
+  <!-- Cabeçalho do App -->
+  <rect x="35" y="72" width="270" height="48" fill="#f5f6fb"/>
+  <text x="50" y="101" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#17133a">Permissões do App</text>
+  <rect x="235" y="86" width="55" height="20" rx="10" fill="#ffe2e6"/>
+  <text x="244" y="100" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#ff3d5a">ATIVAS</text>
+
+  <!-- Linha divisória -->
+  <line x1="35" y1="120" x2="305" y2="120" stroke="#e6e7f1" stroke-width="1"/>
+
+  <!-- Item 1: Microfone -->
+  <g transform="translate(45, 135)">
+    <rect width="250" height="58" rx="12" fill="#ffffff" stroke="#e6e7f1" stroke-width="1.2"/>
+    <circle cx="28" cy="29" r="18" fill="#ffe2e6"/>
+    <!-- Ícone Microfone -->
+    <path d="M28 19 a3.5 3.5 0 0 1 3.5 3.5 v7 a3.5 3.5 0 0 1 -7 0 v-7 a3.5 3.5 0 0 1 3.5 -3.5 z" fill="#ff3d5a"/>
+    <path d="M22 28 a6 6 0 0 0 12 0 M28 34 v4 M24 38 h8" stroke="#ff3d5a" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <text x="56" y="26" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#17133a">Microfone</text>
+    <text x="56" y="42" font-family="'Inter', sans-serif" font-size="11" fill="#5b5e7e">Acesso ao áudio</text>
+    <!-- Switch ON -->
+    <rect x="195" y="18" width="42" height="22" rx="11" fill="url(#coralGrad)"/>
+    <circle cx="225" cy="29" r="8.5" fill="#ffffff"/>
+  </g>
+
+  <!-- Item 2: Localização -->
+  <g transform="translate(45, 205)">
+    <rect width="250" height="58" rx="12" fill="#ffffff" stroke="#e6e7f1" stroke-width="1.2"/>
+    <circle cx="28" cy="29" r="18" fill="#ffe2e6"/>
+    <!-- Ícone GPS Pin -->
+    <path d="M28 18 a6 6 0 0 1 6 6 c0 4.5 -6 11 -6 11 s-6 -6.5 -6 -11 a6 6 0 0 1 6 -6 z" fill="#ff3d5a"/>
+    <circle cx="28" cy="24" r="2.2" fill="#ffffff"/>
+    <text x="56" y="26" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#17133a">Localização</text>
+    <text x="56" y="42" font-family="'Inter', sans-serif" font-size="11" fill="#5b5e7e">Sempre permitida</text>
+    <!-- Switch ON -->
+    <rect x="195" y="18" width="42" height="22" rx="11" fill="url(#coralGrad)"/>
+    <circle cx="225" cy="29" r="8.5" fill="#ffffff"/>
+  </g>
+
+  <!-- Item 3: Câmera -->
+  <g transform="translate(45, 275)">
+    <rect width="250" height="58" rx="12" fill="#ffffff" stroke="#e6e7f1" stroke-width="1.2"/>
+    <circle cx="28" cy="29" r="18" fill="#ffe2e6"/>
+    <!-- Ícone Câmera -->
+    <path d="M22 23 h3 l2 -3 h6 l2 3 h3 a3 3 0 0 1 3 3 v10 a3 3 0 0 1 -3 3 h-16 a3 3 0 0 1 -3 -3 v-10 a3 3 0 0 1 3 -3 z" fill="#ff3d5a"/>
+    <circle cx="30" cy="29" r="3.2" fill="#ffffff"/>
+    <text x="56" y="26" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#17133a">Câmera</text>
+    <text x="56" y="42" font-family="'Inter', sans-serif" font-size="11" fill="#5b5e7e">Fotos e vídeos</text>
+    <!-- Switch ON -->
+    <rect x="195" y="18" width="42" height="22" rx="11" fill="url(#coralGrad)"/>
+    <circle cx="225" cy="29" r="8.5" fill="#ffffff"/>
+  </g>
+
+  <!-- Item 4: Contatos -->
+  <g transform="translate(45, 345)">
+    <rect width="250" height="58" rx="12" fill="#ffffff" stroke="#e6e7f1" stroke-width="1.2"/>
+    <circle cx="28" cy="29" r="18" fill="#ffe2e6"/>
+    <!-- Ícone Contatos -->
+    <circle cx="28" cy="24" r="4" fill="#ff3d5a"/>
+    <path d="M21 35 c0 -4 3.5 -6 7 -6 s7 2 7 6" fill="#ff3d5a"/>
+    <text x="56" y="26" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#17133a">Contatos</text>
+    <text x="56" y="42" font-family="'Inter', sans-serif" font-size="11" fill="#5b5e7e">Lista de amigos</text>
+    <!-- Switch ON -->
+    <rect x="195" y="18" width="42" height="22" rx="11" fill="url(#coralGrad)"/>
+    <circle cx="225" cy="29" r="8.5" fill="#ffffff"/>
+  </g>
+
+  <!-- Alerta inferior -->
+  <g transform="translate(45, 418)">
+    <rect width="250" height="42" rx="8" fill="#f5f6fb" stroke="#e6e7f1" stroke-width="1"/>
+    <circle cx="22" cy="21" r="9" fill="#17133a"/>
+    <text x="22" y="25" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">!</text>
+    <text x="38" y="25" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#5b5e7e">4 permissões ativas em 2º plano</text>
+  </g>
+</svg>

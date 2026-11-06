@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="100%" height="100%">
+  <defs>
+    <filter id="cardShadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#1a1147" flood-opacity="0.1"/>
+    </filter>
+    <linearGradient id="bubbleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8f9ff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fundo Geral -->
+  <rect width="760" height="300" rx="16" fill="#f5f6fb" stroke="#e6e7f1" stroke-width="1.5"/>
+
+  <!-- ================= ETAPA 1: CONVERSA ================= -->
+  <g transform="translate(25, 30)">
+    <rect width="215" height="240" rx="14" fill="#ffffff" stroke="#e6e7f1" filter="url(#cardShadow)"/>
+    <rect x="18" y="18" width="80" height="22" rx="11" fill="#17133a"/>
+    <text x="58" y="33" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">1. PAPO</text>
+
+    <!-- Balão de Fala -->
+    <path d="M 20 60 h 175 a 12 12 0 0 1 12 12 v 65 a 12 12 0 0 1 -12 12 h -130 l -18 16 v -16 h -27 a 12 12 0 0 1 -12 -12 v -65 a 12 12 0 0 1 12 -12 z" 
+          fill="url(#bubbleGrad)" stroke="#ff3d5a" stroke-width="2"/>
+    <text x="32" y="86" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#ff3d5a">Você comenta:</text>
+    <text x="32" y="108" font-family="'Inter', sans-serif" font-size="12" font-style="italic" fill="#17133a">“Tô precisando de um</text>
+    <text x="32" y="126" font-family="'Inter', sans-serif" font-size="12" font-style="italic" font-weight="700" fill="#17133a">tênis novo pra correr...”</text>
+
+    <!-- Pessoas ao redor -->
+    <text x="20" y="200" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#17133a">Com você:</text>
+    <text x="20" y="218" font-family="'Inter', sans-serif" font-size="11" fill="#5b5e7e">Amigo conectado no mesmo Wi-Fi</text>
+  </g>
+
+  <!-- Seta Conectora 1 -->
+  <path d="M 252 150 L 275 150" stroke="#ff3d5a" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="274,144 284,150 274,156" fill="#ff3d5a"/>
+
+  <!-- ================= ETAPA 2: BASTIDORES DO ALGORITMO ================= -->
+  <g transform="translate(290, 30)">
+    <rect width="215" height="240" rx="14" fill="#17133a" filter="url(#cardShadow)"/>
+    <rect x="18" y="18" width="95" height="22" rx="11" fill="#ff3d5a"/>
+    <text x="65" y="33" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">2. BASTIDORES</text>
+
+    <!-- Dados cruzados -->
+    <g transform="translate(18, 58)">
+      <rect width="179" height="36" rx="8" fill="#241b52"/>
+      <circle cx="16" cy="18" r="4" fill="#00e5a3"/>
+      <text x="28" y="18" font-family="'Inter', sans-serif" font-size="10.5" font-weight="700" fill="#ffffff">Mesmo Wi-Fi / IP</text>
+      <text x="28" y="29" font-family="'Inter', sans-serif" font-size="9.5" fill="#b4b7d6">Amigo pesquisou tênis</text>
+    </g>
+
+    <g transform="translate(18, 102)">
+      <rect width="179" height="36" rx="8" fill="#241b52"/>
+      <circle cx="16" cy="18" r="4" fill="#ffb84d"/>
+      <text x="28" y="18" font-family="'Inter', sans-serif" font-size="10.5" font-weight="700" fill="#ffffff">Grafo Social</text>
+      <text x="28" y="29" font-family="'Inter', sans-serif" font-size="9.5" fill="#b4b7d6">Mesma idade e grupo</text>
+    </g>
+
+    <g transform="translate(18, 146)">
+      <rect width="179" height="36" rx="8" fill="#241b52"/>
+      <circle cx="16" cy="18" r="4" fill="#ff3d5a"/>
+      <text x="28" y="18" font-family="'Inter', sans-serif" font-size="10.5" font-weight="700" fill="#ffffff">Pausa na Tela</text>
+      <text x="28" y="29" font-family="'Inter', sans-serif" font-size="9.5" fill="#b4b7d6">3s de olhar no post ontem</text>
+    </g>
+
+    <text x="107" y="215" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#00e5a3" text-anchor="middle">98% Probabilidade</text>
+  </g>
+
+  <!-- Seta Conectora 2 -->
+  <path d="M 517 150 L 540 150" stroke="#ff3d5a" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="539,144 549,150 539,156" fill="#ff3d5a"/>
+
+  <!-- ================= ETAPA 3: O ANÚNCIO NO FEED ================= -->
+  <g transform="translate(555, 30)">
+    <rect width="180" height="240" rx="14" fill="#ffffff" stroke="#e6e7f1" filter="url(#cardShadow)"/>
+    <rect x="15" y="15" width="85" height="20" rx="10" fill="#ffe2e6"/>
+    <text x="57" y="29" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#ff3d5a" text-anchor="middle">3. NO FEED</text>
+
+    <!-- Mini Card de Anúncio Social -->
+    <g transform="translate(15, 45)">
+      <circle cx="12" cy="12" r="10" fill="#17133a"/>
+      <text x="28" y="11" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#17133a">Loja Esportes</text>
+      <text x="28" y="21" font-family="'Inter', sans-serif" font-size="8.5" fill="#888">Patrocinado</text>
+
+      <!-- Ilustração do Tênis -->
+      <rect y="30" width="150" height="85" rx="8" fill="#f5f6fb"/>
+      <path d="M 25 85 Q 40 55 70 65 L 120 70 Q 135 72 135 85 Z" fill="#ff3d5a"/>
+      <path d="M 35 85 Q 50 65 75 72 L 115 76" stroke="#ffffff" stroke-width="3" fill="none"/>
+      <rect x="20" y="85" width="118" height="10" rx="4" fill="#17133a"/>
+
+      <!-- Título e CTA -->
+      <text x="0" y="132" font-family="'Inter', sans-serif" font-size="10.5" font-weight="700" fill="#17133a">Tênis Pro Runner 4</text>
+      <rect y="142" width="150" height="28" rx="6" fill="#ff3d5a"/>
+      <text x="75" y="160" font-family="'Inter', sans-serif" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">Comprar com 30% OFF</text>
+    </g>
+  </g>
+</svg>

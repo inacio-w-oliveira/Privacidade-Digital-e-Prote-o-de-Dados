@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 280" width="100%" height="100%">
+  <defs>
+    <filter id="shadowBox" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#1a1147" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Fundo do Mapa -->
+  <rect width="760" height="280" rx="16" fill="#f5f6fb" stroke="#e6e7f1" stroke-width="1.5" filter="url(#shadowBox)"/>
+
+  <!-- Malha de Ruas e Quarteirões do Mapa -->
+  <path d="M 40 80 Q 200 60 400 90 T 720 70" stroke="#e2e4f0" stroke-width="12" fill="none"/>
+  <path d="M 120 20 L 150 260" stroke="#e2e4f0" stroke-width="10" fill="none"/>
+  <path d="M 320 20 L 290 260" stroke="#e2e4f0" stroke-width="14" fill="none"/>
+  <path d="M 520 20 L 560 260" stroke="#e2e4f0" stroke-width="10" fill="none"/>
+  <path d="M 50 180 Q 300 210 500 170 T 720 200" stroke="#e2e4f0" stroke-width="12" fill="none"/>
+
+  <!-- Linha de Rota / Trajeto Tracejada com Destaque -->
+  <path d="M 130 95 C 240 70, 260 170, 310 185 S 480 230, 510 130 T 660 100" 
+        stroke="#ff3d5a" stroke-width="4.5" stroke-dasharray="8 6" fill="none"/>
+
+  <!-- Ponto 1: Casa (07:30) -->
+  <g transform="translate(130, 95)">
+    <circle r="18" fill="#17133a"/>
+    <circle r="6" fill="#ffffff"/>
+    <rect x="-45" y="-48" width="90" height="28" rx="6" fill="#17133a"/>
+    <text x="0" y="-35" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Casa</text>
+    <text x="0" y="-23" font-family="'Inter', sans-serif" font-size="9.5" fill="#ff8e99" text-anchor="middle">07:30 • Wi-Fi</text>
+  </g>
+
+  <!-- Ponto 2: Trabalho (08:30 às 17:30) -->
+  <g transform="translate(310, 185)">
+    <circle r="18" fill="#17133a"/>
+    <circle r="6" fill="#ffffff"/>
+    <rect x="-55" y="22" width="110" height="28" rx="6" fill="#17133a"/>
+    <text x="0" y="35" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Trabalho / Univ.</text>
+    <text x="0" y="47" font-family="'Inter', sans-serif" font-size="9.5" fill="#ff8e99" text-anchor="middle">9h conectado</text>
+  </g>
+
+  <!-- Ponto 3: Restaurante / Café (12:30) -->
+  <g transform="translate(510, 130)">
+    <circle r="18" fill="#17133a"/>
+    <circle r="6" fill="#ffffff"/>
+    <rect x="-48" y="-48" width="96" height="28" rx="6" fill="#17133a"/>
+    <text x="0" y="-35" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Restaurante</text>
+    <text x="0" y="-23" font-family="'Inter', sans-serif" font-size="9.5" fill="#ff8e99" text-anchor="middle">12:30 • GPS</text>
+  </g>
+
+  <!-- Ponto 4: Loja / Shopping (18:45) - Destaque com Pulse -->
+  <g transform="translate(660, 100)">
+    <circle r="26" fill="#ff3d5a" opacity="0.2"/>
+    <circle r="18" fill="#ff3d5a"/>
+    <circle r="6" fill="#ffffff"/>
+    <rect x="-50" y="-50" width="100" height="30" rx="6" fill="#ff3d5a"/>
+    <text x="0" y="-36" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Loja de Tênis</text>
+    <text x="0" y="-24" font-family="'Inter', sans-serif" font-size="9.5" fill="#ffffff" text-anchor="middle">18:45 • Beacon</text>
+  </g>
+
+  <!-- Caixa de Legenda Inferior -->
+  <g transform="translate(25, 235)">
+    <rect width="710" height="32" rx="8" fill="#ffffff" stroke="#e6e7f1"/>
+    <text x="18" y="21" font-family="'Inter', sans-serif" font-size="11.5" font-weight="600" fill="#17133a">Telemetria:</text>
+    <text x="95" y="21" font-family="'Inter', sans-serif" font-size="11" fill="#5b5e7e">Mesmo sem abrir nenhum app de mapa, redes Wi-Fi e Bluetooth revelam sua rotina completa e lojas visitadas.</text>
+  </g>
+</svg>

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O Celular Está Me Ouvindo? | Ciência da Computação — Atitus Educação</title>
+  <meta name="description" content="Descubra o que os aplicativos realmente sabem sobre você, por que o celular não precisa gravar sua voz 24h e como blindar sua privacidade no Android e iPhone." />
+
+  <!-- Open Graph para compartilhamento bonito no WhatsApp / Redes Sociais -->
+  <meta property="og:title" content="O Celular Está Me Ouvindo? A Verdade sobre Privacidade Digital" />
+  <meta property="og:description" content="Guia interativo da Ciência da Computação (Atitus Educação): entenda como os algoritmos preveem seus desejos e aprenda a proteger seu celular em 3 minutos." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fontes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================= HEADER INSTITUCIONAL ================= -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="#topo" class="brand-logos" aria-label="Atitus Educação - Ciência da Computação">
+        <img src="assets/logo-atitus.png" alt="Atitus Educação" class="logo-atitus" />
+        <span class="logo-divider" aria-hidden="true"></span>
+        <img src="assets/logo-computacao.png" alt="Ciência da Computação" class="logo-cc" />
+      </a>
+
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+
+      <ul id="nav-links" class="nav-links">
+        <li><a href="#mito-ciencia">Mito vs. Ciência</a></li>
+        <li><a href="#espelho-digital">Espelho ao Vivo</a></li>
+        <li><a href="#simulador">Como Adivinham?</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#autodefesa" class="nav-cta">Blindar Celular</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="topo">
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-eyebrow">
+          <span class="badge-pill">🎓 Projeto PBL • Conscientização Digital</span>
+        </div>
+
+        <h1>
+          Você fala de um tênis e ele aparece no feed.<br />
+          <span class="text-gradient">O celular está te ouvindo?</span>
+        </h1>
+
+        <p class="hero-lead">
+          A resposta curta da <strong>Ciência da Computação</strong> surpreende: os aplicativos <strong>não precisam gravar suas conversas 24h</strong>. O que acontece nos bastidores é muito mais silencioso, matemático e certeiro.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#simulador" class="btn btn-primary">Ver Como o Algoritmo Adivinha</a>
+          <a href="#autodefesa" class="btn btn-secondary">🛡️ Passo a Passo de Proteção</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-value">0 seg</span>
+            <span class="stat-label">de áudio gravado necessário para prever sua próxima compra</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">+200 sinais</span>
+            <span class="stat-label">de localização, rede, rotina e cliques cruzados por minuto</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">3 minutos</span>
+            <span class="stat-label">para ajustar seu Android ou iPhone e recuperar o controle</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEÇÃO 1: POR QUE NÃO GRAVAM 24H? ================= -->
+    <section id="mito-ciencia" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-pill alert">Mito vs. Engenharia</span>
+          <h2>Por que gravar todo mundo 24h seria inviável?</h2>
+          <p>
+            Pesquisadores de cibersegurança já colocaram celulares em salas isoladas com anúncios falados e monitoraram cada pacote de internet. Veja os 3 motivos técnicos pelos quais a "escuta secreta contínua" não é usada pelos grandes apps:
+          </p>
+        </div>
+
+        <div class="myth-grid">
+          <article class="feature-card">
+            <div class="card-icon" aria-hidden="true">🔋</div>
+            <h3>1. Bateria e Calor Imediatos</h3>
+            <p>
+              Manter o microfone captando, comprimindo áudio e usando IA para transcrever falas o dia inteiro esquentaria o aparelho no seu bolso e drenaria a bateria em poucas horas.
+            </p>
+            <small class="micro-source">
+              <strong>Fonte:</strong> <a href="https://canaltech.com.br/apps/instagram-nao-escuta-suas-conversas-pelo-microfone-do-celular-diz-chefe-da-rede/" target="_blank" rel="noopener noreferrer">Canaltech</a> &amp; <a href="https://tecnoblog.net/noticias/eu-juro-nos-nao-escutamos-o-seu-microfone-diz-chefe-do-instagram/" target="_blank" rel="noopener noreferrer">Tecnoblog (out/2025)</a>
+            </small>
+          </article>
+
+          <article class="feature-card">
+            <div class="card-icon" aria-hidden="true">📡</div>
+            <h3>2. Rastro Impossível de Esconder</h3>
+            <p>
+              Engenheiros de segurança analisam o tráfego de rede dos aplicativos todos os dias. Enviar arquivos constantes de áudio sem você apertar um botão seria flagrado na mesma hora.
+            </p>
+            <small class="micro-source">
+              <strong>Fonte:</strong> <a href="https://olhardigital.com.br/2025/10/01/internet-e-redes-sociais/espionagem-chefe-do-instagram-nega-uso-de-microfone-para-anuncios/" target="_blank" rel="noopener noreferrer">Olhar Digital</a> &amp; <a href="https://www.itatiaia.com.br/ciencia-e-tecnologia/celular-escuta-conversas-para-mostrar-anuncios-entenda-o-que-acontece/" target="_blank" rel="noopener noreferrer">Itatiaia Ciência e Tecnologia</a>
+            </small>
+          </article>
+
+          <article class="feature-card">
+            <div class="card-icon" aria-hidden="true">🧮</div>
+            <h3>3. Dados de Clique São Melhores</h3>
+            <p>
+              Processar bilhões de horas de conversa fiada custaria uma fortuna. Já cruzar onde você esteve, com quem andou e onde pausou o dedo custa quase nada — e acerta muito mais!
+            </p>
+            <small class="micro-source">
+              <strong>Fonte:</strong> <a href="https://startupi.com.br/meta-nao-espiona-microfone-conversas-ias-dados/" target="_blank" rel="noopener noreferrer">Startupi</a> &amp; <a href="https://www.showmetech.com.br/seu-celular-ouve-o-que-voce-fala-para-mostrar-anuncios-novo-estudo-indica-que-sim/" target="_blank" rel="noopener noreferrer">Showmetech</a>
+            </small>
+          </article>
+        </div>
+
+        <div class="nuance-banner">
+          <div class="nuance-icon" aria-hidden="true">💡</div>
+          <div>
+            <h4>Mas então quando o microfone REALMENTE funciona?</h4>
+            <p>
+              Existem duas exceções reais: <strong>(1) Assistentes de voz</strong> ("Ok Google", "E aí Siri"), que usam um microprocessador local de baixíssima energia treinado apenas para acordar ao ouvir a palavra-chave; e <strong>(2) Aplicativos maliciosos (vírus/spyware)</strong> instalados fora de lojas oficiais ou com permissões abusivas — por isso Android e iOS hoje acendem um <strong>ponto verde ou laranja</strong> no topo da tela sempre que o microfone é ativado!
+            </p>
+            <small class="micro-source">
+              <strong>Fonte:</strong> <a href="https://canaltech.com.br/ios/indicador-de-gravacao-microfone-camera-iphone-ios-14/" target="_blank" rel="noopener noreferrer">Canaltech — Indicadores de microfone e câmera</a> • <a href="https://www.itatiaia.com.br/ciencia-e-tecnologia/celular-escuta-conversas-para-mostrar-anuncios-entenda-o-que-acontece/" target="_blank" rel="noopener noreferrer">Itatiaia — Assistentes de voz</a>
+            </small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEÇÃO 2: ESPELHO DIGITAL AO VIVO ================= -->
+    <section id="espelho-digital" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-pill emerald">Demonstração em Tempo Real</span>
+          <h2>O que qualquer site descobre em 1 milissegundo</h2>
+          <p>
+            Você não deu permissão de GPS, câmera nem microfone para esta página. Mesmo assim, veja o que o seu navegador entrega automaticamente para qualquer site ou anúncio:
+          </p>
+        </div>
+
+        <div class="scanner-box">
+          <div class="scanner-topbar">
+            <div class="scanner-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="scanner-title">espelho_digital_local.sh</span>
+            </div>
+            <span class="privacy-safe-tag">🔒 100% Seguro: Lido apenas na sua tela (nada é salvo)</span>
+          </div>
+
+          <div class="scanner-grid">
+            <div class="scan-item">
+              <span class="scan-label">Aparelho &amp; Navegador</span>
+              <span id="scan-device" class="scan-value">Analisando...</span>
+            </div>
+            <div class="scan-item">
+              <span class="scan-label">Tela &amp; Proporção</span>
+              <span id="scan-screen" class="scan-value">Analisando...</span>
+            </div>
+            <div class="scan-item">
+              <span class="scan-label">Região / Fuso &amp; Idioma</span>
+              <span id="scan-region" class="scan-value">Analisando...</span>
+            </div>
+            <div class="scan-item">
+              <span class="scan-label">Processador Estimado</span>
+              <span id="scan-hardware" class="scan-value">Analisando...</span>
+            </div>
+            <div class="scan-item">
+              <span class="scan-label">Perfil de Conexão</span>
+              <span id="scan-network" class="scan-value">Analisando...</span>
+            </div>
+            <div class="scan-item">
+              <span class="scan-label">Tempo de Atenção (Ao Vivo)</span>
+              <span id="scan-dwell" class="scan-value highlight">0s ativo • 0% lido</span>
+            </div>
+          </div>
+
+          <p class="scanner-footer-note">
+            Na Computação, a combinação única dessas características chama-se <strong>Browser Fingerprinting (Impressão Digital do Dispositivo)</strong> — permitindo reconhecer seu aparelho mesmo em aba anônima!
+            <small class="micro-source">
+              <strong>Fonte técnica:</strong> <a href="https://coveryourtracks.eff.org/" target="_blank" rel="noopener noreferrer">Electronic Frontier Foundation (EFF — Cover Your Tracks)</a> &amp; <a href="https://developer.mozilla.org/pt-BR/docs/Glossary/Fingerprinting" target="_blank" rel="noopener noreferrer">MDN Web Docs — Fingerprinting</a>
+            </small>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEÇÃO 3: SIMULADOR DE CENÁRIOS ================= -->
+    <section id="simulador" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-pill">Bastidores do Algoritmo</span>
+          <h2>“Mas eu juro que só falei!” — Veja como aconteceu</h2>
+          <p>
+            Escolha uma situação clássica abaixo e veja como o cruzamento de dados cria a ilusão perfeita de que seu microfone estava gravando:
+          </p>
+        </div>
+
+        <div class="scenario-tabs" role="tablist">
+          <button class="scenario-tab active" data-scenario="tenis" type="button">👟 O Tênis no Churrasco</button>
+          <button class="scenario-tab" data-scenario="colchao" type="button">🛏️ A Dor nas Costas</button>
+          <button class="scenario-tab" data-scenario="viagem" type="button">✈️ A Viagem "Só Pensada"</button>
+        </div>
+
+        <div class="scenario-panel">
+          <div class="scenario-comparison">
+            <div class="illusion-box">
+              <h3>👀 O que você sentiu na hora</h3>
+              <p id="scenario-quote" class="illusion-quote"></p>
+              <p id="scenario-tag" class="illusion-tag"></p>
+            </div>
+
+            <div class="reality-steps">
+              <h3>🧠 O que o algoritmo realmente fez (4 etapas)</h3>
+              <ol id="scenario-steps" class="step-timeline"></ol>
+              <small class="micro-source">
+                <strong>Fontes sobre recomendação cruzada e viés de confirmação:</strong> <a href="https://startupi.com.br/meta-nao-espiona-microfone-conversas-ias-dados/" target="_blank" rel="noopener noreferrer">Startupi</a>, <a href="https://tecnoblog.net/noticias/eu-juro-nos-nao-escutamos-o-seu-microfone-diz-chefe-do-instagram/" target="_blank" rel="noopener noreferrer">Tecnoblog</a> &amp; <a href="https://www.itatiaia.com.br/ciencia-e-tecnologia/celular-escuta-conversas-para-mostrar-anuncios-entenda-o-que-acontece/" target="_blank" rel="noopener noreferrer">Itatiaia</a>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEÇÃO 4: OS 5 PILARES DOS DADOS ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-pill">Dossiê Invisível</span>
+          <h2>O que os aplicativos realmente sabem sobre você</h2>
+          <p>Estes são os blocos de informações que constroem o seu "gêmeo digital" nas plataformas de publicidade:</p>
+        </div>
+
+        <div class="pillars-grid">
+          <article class="pillar-card">
+            <div class="pillar-header">
+              <span class="pillar-tag">GPS + WIFI</span>
+              <h3>Onde você vai e para</h3>
+            </div>
+            <p>Mesmo sem abrir o mapa, redes Wi-Fi e Bluetooth de shoppings revelam quais lojas, clínicas ou bairros você frequenta e por quanto tempo.</p>
+            <small class="micro-source">
+              <strong>Fonte:</strong> <a href="https://exame.com/tecnologia/examelab/pare-de-dar-tudo-de-bandeja-as-permissoes-de-app-que-voce-deve-negar-hoje/" target="_blank" rel="noopener noreferrer">ExameLab — Permissões de localização</a>
+            </small>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-header">
+              <span class="pillar-tag">GRAFO SOCIAL</span>
+              <h3>Com quem você convive</h3>
+            </div>
+            <p>Quando dois celulares dividem o mesmo Wi-Fi ou ficam próximos com frequência, as pesquisas de uma pessoa passam a influenciar os anúncios da outra.</p>
+            <small class="micro-source">
+              <strong>Fonte:</strong> <a href="https://olhardigital.com.br/2025/10/01/internet-e-redes-sociais/espionagem-chefe-do-instagram-nega-uso-de-microfone-para-anuncios/" target="_blank" rel="noopener noreferrer">Olhar Digital — Perfil de amigos e contatos próximos</a>
+            </small>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-header">
+              <span class="pillar-tag">ATENÇÃO &amp; IA</span>
+              <h3>Onde seu olhar trava</h3>
+            </div>
+            <p>Parar de rolar o feed por 3 segundos em uma foto, dar zoom ou conversar com assistentes de IA das plataformas alimenta o perfil de anúncios.</p>
+            <small class="micro-source">
+              <strong>Fonte:</strong> <a href="https://tecnoblog.net/noticias/eu-juro-nos-nao-escutamos-o-seu-microfone-diz-chefe-do-instagram/" target="_blank" rel="noopener noreferrer">Tecnoblog — Interações e uso da Meta AI em anúncios</a>
+            </small>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-header">
+              <span class="pillar-tag">PIXELS WEB</span>
+              <h3>Sites fora da rede social</h3>
+            </div>
+            <p>Milhares de lojas online usam "Pixels" invisíveis que avisam instantaneamente suas redes sociais que você olhou um produto ou abandonou o carrinho.</p>
+            <small class="micro-source">
+              <strong>Fonte:</strong> <a href="https://startupi.com.br/meta-nao-espiona-microfone-conversas-ias-dados/" target="_blank" rel="noopener noreferrer">Startupi — Dados compartilhados por anunciantes</a>
+            </small>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-header">
+              <span class="pillar-tag">ROTINA</span>
+              <h3>Seu sono e hábitos</h3>
+            </div>
+            <p>Horários em que você bloqueia a tela à noite, modelo do aparelho e uso de madrugada ajudam a prever cansaço e compras por impulso.</p>
+            <small class="micro-source">
+              <strong>Fonte:</strong> <a href="https://www.itatiaia.com.br/ciencia-e-tecnologia/celular-escuta-conversas-para-mostrar-anuncios-entenda-o-que-acontece/" target="_blank" rel="noopener noreferrer">Itatiaia — Comportamento digital e telemetria</a>
+            </small>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-header">
+              <span class="pillar-tag">LGPD • BRASIL</span>
+              <h3>Seus direitos por lei</h3>
+            </div>
+            <p>Pela Lei Geral de Proteção de Dados, você pode exigir acesso, correção, revogação de consentimento e eliminação de dados excessivos (ou acionar a ANPD).</p>
+            <small class="micro-source">
+              <strong>Fonte:</strong> <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm" target="_blank" rel="noopener noreferrer">Lei nº 13.709/2018 (LGPD)</a> &amp; <a href="https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados-1/direito-dos-titulares" target="_blank" rel="noopener noreferrer">ANPD (Gov.br)</a>
+            </small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEÇÃO 5: GUIA PRÁTICO DE AUTODEFESA ================= -->
+    <section id="autodefesa" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-pill emerald">Ação Prática Imediata</span>
+          <h2>Manual de Autodefesa: Blinde seu celular agora</h2>
+          <p>
+            Selecione o sistema do seu aparelho abaixo e marque cada solução conforme aplica nas suas configurações:
+          </p>
+        </div>
+
+        <div class="defense-wrapper">
+          <div class="defense-top">
+            <div class="os-switcher" role="group" aria-label="Escolha o sistema do celular">
+              <button type="button" class="os-btn active" data-os="android">🤖 Android</button>
+              <button type="button" class="os-btn" data-os="ios">🍎 iPhone (iOS)</button>
+            </div>
+
+            <div class="shield-meter">
+              <div class="meter-labels">
+                <span>Nível de Blindagem</span>
+                <span id="shield-meter-pct" class="meter-percent">0% Concluído</span>
+              </div>
+              <div class="meter-track">
+                <div id="shield-meter-fill" class="meter-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-items">
+            <!-- SOLUÇÃO 1 -->
+            <label class="check-card">
+              <input type="checkbox" class="defense-check" />
+              <div class="check-body">
+                <h4>1. Limpar acessos desnecessários ao Microfone e Câmera</h4>
+                <p>Jogos, lanternas, editores simples e lojas não precisam de acesso permanente à sua voz ou imagem.</p>
+                <span class="os-path">Carregando caminho...</span>
+                <small class="micro-source">
+                  <strong>Fonte:</strong> <a href="https://exame.com/tecnologia/examelab/pare-de-dar-tudo-de-bandeja-as-permissoes-de-app-que-voce-deve-negar-hoje/" target="_blank" rel="noopener noreferrer">ExameLab (Permissões para negar hoje)</a> • <a href="https://support.google.com/android/answer/9431959?hl=pt-BR" target="_blank" rel="noopener noreferrer">Suporte Google Android</a>
+                </small>
+              </div>
+            </label>
+
+            <!-- SOLUÇÃO 2 -->
+            <label class="check-card">
+              <input type="checkbox" class="defense-check" />
+              <div class="check-body">
+                <h4>2. Restringir a Localização para "Apenas durante o uso"</h4>
+                <p>Impeça que aplicativos rastreiem seus passos em segundo plano quando estão fechados no bolso.</p>
+                <span class="os-path">Carregando caminho...</span>
+                <small class="micro-source">
+                  <strong>Fonte:</strong> <a href="https://exame.com/tecnologia/examelab/pare-de-dar-tudo-de-bandeja-as-permissoes-de-app-que-voce-deve-negar-hoje/" target="_blank" rel="noopener noreferrer">ExameLab (Guia de localização em 2º plano)</a> • <a href="https://support.apple.com/pt-br/102515" target="_blank" rel="noopener noreferrer">Suporte Apple Localização</a>
+                </small>
+              </div>
+            </label>
+
+            <!-- SOLUÇÃO 3 -->
+            <label class="check-card">
+              <input type="checkbox" class="defense-check" />
+              <div class="check-body">
+                <h4>3. Cortar o ID de Publicidade e Rastreamento entre Apps</h4>
+                <p>Quebra o elo principal que permite que um aplicativo saiba tudo o que você fez dentro de outro.</p>
+                <span class="os-path">Carregando caminho...</span>
+                <small class="micro-source">
+                  <strong>Fonte:</strong> <a href="https://support.apple.com/pt-br/102420" target="_blank" rel="noopener noreferrer">Apple — Transparência do Rastreamento de Apps</a> • <a href="https://startupi.com.br/meta-nao-espiona-microfone-conversas-ias-dados/" target="_blank" rel="noopener noreferrer">Startupi (Anúncios segmentados)</a>
+                </small>
+              </div>
+            </label>
+
+            <!-- SOLUÇÃO 4 -->
+            <label class="check-card">
+              <input type="checkbox" class="defense-check" />
+              <div class="check-body">
+                <h4>4. Conferir o Histórico de Privacidade e Indicadores na Tela</h4>
+                <p>Descubra se algum aplicativo suspeito acionou sensores de madrugada e observe sempre os pontos verde (câmera) e laranja (microfone).</p>
+                <span class="os-path">Carregando caminho...</span>
+                <small class="micro-source">
+                  <strong>Fonte:</strong> <a href="https://canaltech.com.br/ios/indicador-de-gravacao-microfone-camera-iphone-ios-14/" target="_blank" rel="noopener noreferrer">Canaltech (Indicadores de gravação)</a> • <a href="https://support.apple.com/pt-br/102188" target="_blank" rel="noopener noreferrer">Relatório de Privacidade dos Apps</a>
+                </small>
+              </div>
+            </label>
+
+            <!-- SOLUÇÃO 5 -->
+            <label class="check-card">
+              <input type="checkbox" class="defense-check" />
+              <div class="check-body">
+                <h4>5. Bloquear Cookies de Terceiros e Desinstalar Apps Esquecidos</h4>
+                <p>Reduz drasticamente a perseguição de anúncios em sites externos e elimina apps antigos com permissões esquecidas.</p>
+                <span class="os-path">Carregando caminho...</span>
+                <small class="micro-source">
+                  <strong>Fonte:</strong> <a href="https://exame.com/tecnologia/examelab/pare-de-dar-tudo-de-bandeja-as-permissoes-de-app-que-voce-deve-negar-hoje/" target="_blank" rel="noopener noreferrer">ExameLab (Revisão de apps inativos)</a> • <a href="https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados-1/direito-dos-titulares" target="_blank" rel="noopener noreferrer">ANPD — Revogação de consentimento</a>
+                </small>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEÇÃO 6: QUIZ INTERATIVO ================= -->
+    <section id="quiz" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-pill">Teste Rápido</span>
+          <h2>Mito ou Verdade?</h2>
+          <p>Teste em 30 segundos se você já domina os segredos da privacidade digital:</p>
+        </div>
+
+        <div class="quiz-container">
+          <div class="quiz-card" data-answer="mito">
+            <p class="quiz-question">1. Abrir a "Aba Anônima" do navegador impede que os sites e redes saibam quem eu sou.</p>
+            <div class="quiz-buttons">
+              <button type="button" class="quiz-btn" data-choice="mito">❌ É Mito</button>
+              <button type="button" class="quiz-btn" data-choice="verdade">✅ É Verdade</button>
+            </div>
+            <div class="quiz-feedback">
+              <strong>Mito!</strong> A aba anônima apenas não salva o histórico no seu próprio aparelho. Seu provedor de internet, o Wi-Fi da empresa/escola e técnicas de <em>Fingerprinting</em> continuam identificando seu acesso.
+              <small class="micro-source"><strong>Fonte:</strong> <a href="https://coveryourtracks.eff.org/" target="_blank" rel="noopener noreferrer">EFF — Cover Your Tracks</a></small>
+            </div>
+          </div>
+
+          <div class="quiz-card" data-answer="verdade">
+            <p class="quiz-question">2. O que um familiar ou colega pesquisa conectado no mesmo Wi-Fi que eu pode fazer anúncios daquilo aparecerem no meu celular.</p>
+            <div class="quiz-buttons">
+              <button type="button" class="quiz-btn" data-choice="mito">❌ É Mito</button>
+              <button type="button" class="quiz-btn" data-choice="verdade">✅ É Verdade</button>
+            </div>
+            <div class="quiz-feedback">
+              <strong>Verdade!</strong> Compartilhar o mesmo endereço IP do Wi-Fi e proximidade física é um dos sinais mais usados pelos algoritmos para sugerir produtos entre pessoas próximas.
+              <small class="micro-source"><strong>Fonte:</strong> <a href="https://olhardigital.com.br/2025/10/01/internet-e-redes-sociais/espionagem-chefe-do-instagram-nega-uso-de-microfone-para-anuncios/" target="_blank" rel="noopener noreferrer">Olhar Digital</a> &amp; <a href="https://www.itatiaia.com.br/ciencia-e-tecnologia/celular-escuta-conversas-para-mostrar-anuncios-entenda-o-que-acontece/" target="_blank" rel="noopener noreferrer">Itatiaia</a></small>
+            </div>
+          </div>
+
+          <div class="quiz-card" data-answer="verdade">
+            <p class="quiz-question">3. Se um ponto verde ou laranja acender sozinho no canto superior da tela sem eu usar câmera/áudio, devo investigar imediatamente.</p>
+            <div class="quiz-buttons">
+              <button type="button" class="quiz-btn" data-choice="mito">❌ É Mito</button>
+              <button type="button" class="quiz-btn" data-choice="verdade">✅ É Verdade</button>
+            </div>
+            <div class="quiz-feedback">
+              <strong>Verdade!</strong> Os indicadores luminosos nativos do Android e do iOS mostram uso real do hardware de câmera ou microfone. Abra o Painel de Privacidade na hora para ver qual app ativou!
+              <small class="micro-source"><strong>Fonte:</strong> <a href="https://canaltech.com.br/ios/indicador-de-gravacao-microfone-camera-iphone-ios-14/" target="_blank" rel="noopener noreferrer">Canaltech — Indicadores de câmera e microfone</a></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REFERÊNCIAS BIBLIOGRÁFICAS CONSOLIDADAS ================= -->
+    <section class="section" style="padding-top: 1rem;">
+      <div class="container">
+        <details class="sources-drawer">
+          <summary>📚 Referências e Fontes Consultadas (10 fontes verificadas)</summary>
+          <ol class="sources-list">
+            <li><a href="https://olhardigital.com.br/2025/10/01/internet-e-redes-sociais/espionagem-chefe-do-instagram-nega-uso-de-microfone-para-anuncios/" target="_blank" rel="noopener noreferrer">Olhar Digital (out/2025)</a> — Espionagem? Chefe do Instagram nega uso de microfone para anúncios.</li>
+            <li><a href="https://tecnoblog.net/noticias/eu-juro-nos-nao-escutamos-o-seu-microfone-diz-chefe-do-instagram/" target="_blank" rel="noopener noreferrer">Tecnoblog (out/2025)</a> — "Eu juro, nós não escutamos o seu microfone", diz chefe do Instagram.</li>
+            <li><a href="https://canaltech.com.br/apps/instagram-nao-escuta-suas-conversas-pelo-microfone-do-celular-diz-chefe-da-rede/" target="_blank" rel="noopener noreferrer">Canaltech</a> — Instagram não escuta suas conversas pelo microfone do celular, diz chefe da rede.</li>
+            <li><a href="https://www.itatiaia.com.br/ciencia-e-tecnologia/celular-escuta-conversas-para-mostrar-anuncios-entenda-o-que-acontece/" target="_blank" rel="noopener noreferrer">Itatiaia Ciência e Tecnologia</a> — Celular escuta conversas para mostrar anúncios? Entenda o que acontece.</li>
+            <li><a href="https://www.showmetech.com.br/seu-celular-ouve-o-que-voce-fala-para-mostrar-anuncios-novo-estudo-indica-que-sim/" target="_blank" rel="noopener noreferrer">Showmetech</a> — Debate sobre escuta ativa em marketing vs. negativas de Google e Amazon.</li>
+            <li><a href="https://canaltech.com.br/ios/indicador-de-gravacao-microfone-camera-iphone-ios-14/" target="_blank" rel="noopener noreferrer">Canaltech</a> — Indicadores luminosos de gravação de microfone e câmera no smartphone.</li>
+            <li><a href="https://exame.com/tecnologia/examelab/pare-de-dar-tudo-de-bandeja-as-permissoes-de-app-que-voce-deve-negar-hoje/" target="_blank" rel="noopener noreferrer">Exame / ExameLab</a> — Pare de dar tudo de bandeja: as permissões de app que você deve negar hoje.</li>
+            <li><a href="https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados-1/direito-dos-titulares" target="_blank" rel="noopener noreferrer">ANPD (Governo Federal)</a> — Direitos dos titulares de dados pessoais.</li>
+            <li><a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm" target="_blank" rel="noopener noreferrer">Planalto (Governo Federal)</a> — Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais — LGPD).</li>
+            <li><a href="https://startupi.com.br/meta-nao-espiona-microfone-conversas-ias-dados/" target="_blank" rel="noopener noreferrer">Startupi</a> — Como dados de anunciantes e comportamento explicam a precisão dos anúncios.</li>
+          </ol>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= RODAPÉ INSTITUCIONAL ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="brand-logos">
+            <img src="assets/logo-atitus.png" alt="Atitus Educação" class="logo-atitus" />
+            <span class="logo-divider" aria-hidden="true"></span>
+            <img src="assets/logo-computacao.png" alt="Ciência da Computação" class="logo-cc" />
+          </div>
+          <p>
+            Projeto acadêmico desenvolvido no modelo <strong>PBL (Problem-Based Learning)</strong> pelos estudantes de Ciência da Computação da Atitus Educação, promovendo cidadania digital e segurança da informação para toda a comunidade.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Conceitos de Computação</h4>
+          <ul>
+            <li>Machine Learning &amp; Recomendação</li>
+            <li>Grafos Sociais &amp; Lookalike</li>
+            <li>Browser Fingerprinting</li>
+            <li>Telemetria Comportamental</li>
+            <li>LGPD (Lei nº 13.709/2018)</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Ficha Acadêmica</h4>
+          <ul>
+            <li><strong>Instituição:</strong> Atitus Educação</li>
+            <li><strong>Curso:</strong> Ciência da Computação</li>
+            <li><strong>Modalidade:</strong> Projeto PBL</li>
+            <li><strong>Tema:</strong> Privacidade Digital &amp; Algoritmos</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Projeto PBL — Ciência da Computação • Atitus Educação</span>
+        <span>Nenhum dado pessoal é armazenado ou coletado por este site educativo.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
