@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+renders/
+apply_qr_to_folder.py
+generate_folders.py
+folder_final_qrcode.png
+index.pdf

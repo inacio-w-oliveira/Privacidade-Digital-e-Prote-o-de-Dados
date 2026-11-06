@@ -1,7 +1,8 @@
 # 📱 O Celular Está Me Ouvindo? — Privacidade Digital & Algoritmos
 
 > **Projeto Acadêmico PBL (Problem-Based Learning)**  
-> **Instituição:** Atitus Educação • **Curso:** Ciência da Computação
+> **Instituição:** Atitus Educação • **Curso:** Ciência da Computação  
+> **🌐 Acesse o site oficial:** https://inacio-w-oliveira.github.io/pbl-privacidade/
 
 Site interativo de divulgação científica e conscientização em privacidade digital, desenvolvido para explicar ao público geral como funcionam os algoritmos de recomendação, o rastreamento comportamental e como proteger smartphones Android e iOS.
 
