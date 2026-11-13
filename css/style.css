@@ -498,6 +498,73 @@ h1, h2, h3, h4 {
   color: var(--emerald);
 }
 
+/* ==========================================================================
+   ADVANCED FINGERPRINT HASH BAR (ENTROPIA & GPU)
+   ========================================================================== */
+.fingerprint-hash-bar {
+  margin-top: 1.35rem;
+  background: linear-gradient(135deg, rgba(8, 26, 48, 0.95), rgba(5, 18, 36, 0.92));
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.45rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hash-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.hash-tag {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--cyan-bright);
+  background: rgba(0, 212, 255, 0.12);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
+}
+
+.hash-status {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--emerald);
+}
+
+.hash-code-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.hash-code {
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 2.8vw, 1.25rem);
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(3, 12, 24, 0.7);
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 229, 163, 0.45);
+  letter-spacing: 0.08em;
+  word-break: break-all;
+  display: inline-block;
+}
+
+.hash-explanation {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-top: 0.4rem;
+}
+
 .scanner-footer-note {
   margin-top: 1.35rem;
   font-size: 0.9rem;

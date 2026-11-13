@@ -170,16 +170,28 @@
               <span id="scan-device" class="scan-value">Analisando...</span>
             </div>
             <div class="scan-item">
-              <span class="scan-label">Tela &amp; Proporção</span>
+              <span class="scan-label">GPU / Placa Gráfica (WebGL)</span>
+              <span id="scan-gpu" class="scan-value highlight">Detectando hardware...</span>
+            </div>
+            <div class="scan-item">
+              <span class="scan-label">Tela, Escala &amp; Frequência</span>
               <span id="scan-screen" class="scan-value">Analisando...</span>
+            </div>
+            <div class="scan-item">
+              <span class="scan-label">Processador &amp; Memória</span>
+              <span id="scan-hardware" class="scan-value">Analisando...</span>
+            </div>
+            <div class="scan-item">
+              <span class="scan-label">Nível de Bateria (Status)</span>
+              <span id="scan-battery" class="scan-value">Consultando sensor...</span>
+            </div>
+            <div class="scan-item">
+              <span class="scan-label">Dispositivo de Entrada</span>
+              <span id="scan-touch" class="scan-value">Detectando...</span>
             </div>
             <div class="scan-item">
               <span class="scan-label">Região / Fuso &amp; Idioma</span>
               <span id="scan-region" class="scan-value">Analisando...</span>
-            </div>
-            <div class="scan-item">
-              <span class="scan-label">Processador Estimado</span>
-              <span id="scan-hardware" class="scan-value">Analisando...</span>
             </div>
             <div class="scan-item">
               <span class="scan-label">Perfil de Conexão</span>
@@ -189,6 +201,20 @@
               <span class="scan-label">Tempo de Atenção (Ao Vivo)</span>
               <span id="scan-dwell" class="scan-value highlight">0s ativo • 0% lido</span>
             </div>
+          </div>
+
+          <!-- Card de Destaque: Hash de Fingerprinting e Entropia -->
+          <div class="fingerprint-hash-bar">
+            <div class="hash-header">
+              <span class="hash-tag">🔑 SEU HASH DE FINGERPRINTING</span>
+              <span class="hash-status">✓ Entropia de Identificação Única</span>
+            </div>
+            <div class="hash-code-wrapper">
+              <code id="scan-fingerprint-id" class="hash-code">Calculando hash exclusivo...</code>
+            </div>
+            <p class="hash-explanation">
+              <strong>Como a Computação explica isso:</strong> Os anunciantes não precisam escutar conversas. A combinação única da sua <strong>GPU</strong>, <strong>núcleos de CPU</strong>, <strong>resolução de tela</strong> e <strong>fuso horário</strong> gera uma assinatura matemática única (<em>Browser Fingerprint</em>) com mais de <strong>33 bits de entropia</strong> — permitindo reconhecer o seu aparelho entre milhões de pessoas, mesmo se você abrir em <strong>Aba Anônima</strong>!
+            </p>
           </div>
 
           <p class="scanner-footer-note">

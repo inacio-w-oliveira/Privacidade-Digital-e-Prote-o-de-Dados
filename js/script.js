@@ -31,11 +31,11 @@ function initMobileNav() {
   });
 }
 
-/* 2. ESPELHO DIGITAL AO VIVO (100% LOCAL NO NAVEGADOR) */
+/* 2. ESPELHO DIGITAL AO VIVO (100% LOCAL NO NAVEGADOR COM GPU E MÉTRICAS AVANÇADAS) */
 function initLiveDigitalMirror() {
   const ua = navigator.userAgent || "";
 
-  // Detectar Sistema Operacional
+  // 1. Detectar Sistema Operacional
   let osName = "Sistema Desconhecido";
   if (/iPhone|iPad|iPod/i.test(ua)) osName = "Apple iOS (iPhone/iPad)";
   else if (/Android/i.test(ua)) osName = "Google Android";
@@ -43,7 +43,7 @@ function initLiveDigitalMirror() {
   else if (/Mac/i.test(ua)) osName = "Apple macOS";
   else if (/Linux/i.test(ua)) osName = "Linux";
 
-  // Detectar Navegador
+  // 2. Detectar Navegador
   let browserName = "Navegador Web";
   if (/Edg\//i.test(ua)) browserName = "Microsoft Edge";
   else if (/OPR\//i.test(ua)) browserName = "Opera";
@@ -58,37 +58,146 @@ function initLiveDigitalMirror() {
 
   setField("scan-device", `${osName} • ${browserName}`);
 
+  // 3. GPU / Placa Gráfica via WebGL Unmasked Info
+  function detectGPU() {
+    try {
+      const canvas = document.createElement("canvas");
+      const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+      if (!gl) return "WebGL indisponível";
+      const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
+      if (debugInfo) {
+        const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+        if (renderer) {
+          let clean = renderer
+            .replace(/^ANGLE \((.+)\)$/i, "$1")
+            .replace(/Direct3D\d+.*$/i, "")
+            .replace(/vs_\d+_\d+.*$/i, "")
+            .trim();
+          return clean || renderer;
+        }
+      }
+      return gl.getParameter(gl.RENDERER) || "GPU Genérica";
+    } catch (e) {
+      return "Restrito pelo navegador";
+    }
+  }
+  const gpuInfo = detectGPU();
+  setField("scan-gpu", gpuInfo);
+
+  // 4. Tela, Densidade e Estimativa de Refresh Rate (Hz)
   const w = window.screen.width;
   const h = window.screen.height;
   const dpr = window.devicePixelRatio || 1;
-  setField("scan-screen", `${w} × ${h} px (Densidade ${dpr}x)`);
+  setField("scan-screen", `${w} × ${h} px (${dpr}x) • Calculando Hz...`);
 
+  function estimateHz() {
+    let frames = 0;
+    const start = performance.now();
+    function step() {
+      frames++;
+      const elapsed = performance.now() - start;
+      if (elapsed < 350) {
+        requestAnimationFrame(step);
+      } else {
+        const rawHz = Math.round((frames * 1000) / elapsed);
+        let hz = rawHz;
+        const standards = [60, 75, 90, 120, 144, 165, 240];
+        for (const s of standards) {
+          if (Math.abs(rawHz - s) <= 4) {
+            hz = s;
+            break;
+          }
+        }
+        setField("scan-screen", `${w} × ${h} px (${dpr}x) • ~${hz} Hz`);
+      }
+    }
+    requestAnimationFrame(step);
+  }
+  estimateHz();
+
+  // 5. Processador e Memória
+  const cores = navigator.hardwareConcurrency ? `${navigator.hardwareConcurrency} núcleos lógicos` : "Núcleos protegidos";
+  const mem = navigator.deviceMemory ? ` • ~${navigator.deviceMemory} GB RAM` : "";
+  setField("scan-hardware", `${cores}${mem}`);
+
+  // 6. Sensor de Bateria (Battery Status API)
+  if (navigator.getBattery) {
+    navigator.getBattery().then((battery) => {
+      const updateBat = () => {
+        const level = Math.round(battery.level * 100);
+        const st = battery.charging ? "⚡ Carregando" : "🔋 Na bateria";
+        setField("scan-battery", `${level}% (${st})`);
+      };
+      updateBat();
+      battery.addEventListener("levelchange", updateBat);
+      battery.addEventListener("chargingchange", updateBat);
+    }).catch(() => {
+      setField("scan-battery", "API restrita pelo SO");
+    });
+  } else {
+    setField("scan-battery", "Oculto por privacidade (iOS/Safari)");
+  }
+
+  // 7. Dispositivo de Entrada (Touch vs Mouse)
+  const touchPoints = navigator.maxTouchPoints || 0;
+  const touchDesc = touchPoints > 0 ? `Touchscreen (${touchPoints} ${touchPoints === 1 ? "ponto" : "pontos"})` : "Mouse & Teclado (Desktop)";
+  setField("scan-touch", touchDesc);
+
+  // 8. Região, Fuso e Idioma
   const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "Fuso Padrão";
   const lang = navigator.language || "pt-BR";
   setField("scan-region", `${tz} (${lang})`);
 
-  const cores = navigator.hardwareConcurrency ? `${navigator.hardwareConcurrency} núcleos lógicos` : "Oculto pelo navegador";
-  const mem = navigator.deviceMemory ? ` • ~${navigator.deviceMemory} GB RAM` : "";
-  setField("scan-hardware", `${cores}${mem}`);
-
+  // 9. Perfil de Conexão
   const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-  let netInfo = "Banda larga / Wi-Fi ou Dados";
+  let netInfo = "Banda larga / Wi-Fi";
   if (conn && conn.effectiveType) {
-    netInfo = `Rede tipo ${conn.effectiveType.toUpperCase()}${conn.downlink ? ` (~${conn.downlink} Mbps)` : ""}`;
+    netInfo = `Rede ${conn.effectiveType.toUpperCase()}${conn.downlink ? ` (~${conn.downlink} Mbps)` : ""}`;
   }
   setField("scan-network", netInfo);
 
-  // Cronômetro de Tempo de Atenção (Dwell Time)
+  // 10. Cálculo Matemático do Hash de Fingerprinting (Determinístico)
+  function computeFingerprintHash() {
+    const rawData = [
+      osName,
+      browserName,
+      gpuInfo,
+      `${w}x${h}x${dpr}`,
+      cores,
+      touchPoints,
+      tz,
+      lang
+    ].join("||");
+
+    let h1 = 0xdeadbeef, h2 = 0x41c6ce57;
+    for (let i = 0; i < rawData.length; i++) {
+      const ch = rawData.charCodeAt(i);
+      h1 = Math.imul(h1 ^ ch, 2654435761);
+      h2 = Math.imul(h2 ^ ch, 1597334677);
+    }
+    h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+    h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+    const p1 = (h1 >>> 0).toString(16).toUpperCase().padStart(8, "0");
+    const p2 = (h2 >>> 0).toString(16).toUpperCase().padStart(8, "0");
+    return `FPR-${p1.slice(0, 4)}-${p2.slice(0, 4)}-${p1.slice(4, 8)}`;
+  }
+  setField("scan-fingerprint-id", computeFingerprintHash());
+
+  // 11. Cronômetro de Tempo de Atenção (Dwell Time)
   const dwellEl = document.getElementById("scan-dwell");
   let seconds = 0;
   let maxScroll = 0;
 
-  window.addEventListener("scroll", () => {
-    const scrollTop = window.scrollY;
-    const docHeight = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
-    const pct = Math.min(100, Math.round((scrollTop / docHeight) * 100));
-    if (pct > maxScroll) maxScroll = pct;
-  }, { passive: true });
+  window.addEventListener(
+    "scroll",
+    () => {
+      const scrollTop = window.scrollY;
+      const docHeight = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+      const pct = Math.min(100, Math.round((scrollTop / docHeight) * 100));
+      if (pct > maxScroll) maxScroll = pct;
+    },
+    { passive: true }
+  );
 
   setInterval(() => {
     seconds++;
